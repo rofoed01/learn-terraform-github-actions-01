@@ -4,8 +4,7 @@ provider "aws" {
   region = "us-west-2"
 }
 terraform {
-  
-  required_providers {
+    required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "4.52.0"
@@ -14,7 +13,6 @@ terraform {
       source  = "hashicorp/random"
       version = "3.4.3"
     }
-    
   }
   required_version = ">= 1.1.0"
 
@@ -36,7 +34,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["al2023-ami-2023.*-x86_64"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 }
 
