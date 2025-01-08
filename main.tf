@@ -3,8 +3,11 @@
 provider "aws" {
   region = "us-west-2"
 }
+
+#5
+
 terraform {
-    required_providers {
+  required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "4.52.0"
@@ -16,12 +19,13 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-  cloud {
-    organization = "sambaSaturday-RobO"
+   cloud { 
+    
+    organization = "sambaSaturday-RobO" 
 
-    workspaces {
-      name = "learn-terraform-github-actions"
-    }
+    workspaces { 
+      name = "learn-terraform-github-actions" 
+    } 
   }
 }
 
