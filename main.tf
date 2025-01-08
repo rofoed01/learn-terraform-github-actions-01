@@ -1,7 +1,10 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
-
+provider "aws" {
+  region = "us-west-2"
+}
 terraform {
+  
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -11,6 +14,7 @@ terraform {
       source  = "hashicorp/random"
       version = "3.4.3"
     }
+    
   }
   required_version = ">= 1.1.0"
 
@@ -23,9 +27,7 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "us-west-2"
-}
+
 
 resource "random_pet" "sg" {}
 
