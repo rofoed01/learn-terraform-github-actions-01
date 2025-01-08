@@ -31,14 +31,11 @@ resource "random_pet" "sg" {}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
-  owners      = ["amazon"]
 
   filter {
     name   = "name"
     values = ["al2023-ami-2023.*-x86_64"]
   }
-
-  owners = ["359176157131"] # Canonical
 }
 
 resource "aws_instance" "web" {
